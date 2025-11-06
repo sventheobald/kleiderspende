@@ -1,47 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
 
-import Home from './pages/Home';
-import RegisterDonation from './pages/RegisterDonation';
-import AboutUs from './pages/AboutUs';
-import Impressum from './pages/Impressum';
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Home from './pages/Home.jsx'
+import RegisterDonation from './pages/RegisterDonation.jsx'
+import AboutUs from './pages/AboutUs.jsx'
+import Impressum from './pages/Impressum.jsx'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register-donation" element={<RegisterDonation />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/impressum" element={<Impressum />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   )
 }
-
-<h1 className="text-3xl font-bold text-blue-600">
-  Tailwind funktioniert 🎉
-</h1>
 
 export default App
