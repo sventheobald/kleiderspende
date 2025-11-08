@@ -1,5 +1,5 @@
 function Impressum() {
-    return <h1>Über uns</h1>
+    return <h1>Impressum</h1>
   }
   
   export default Impressum

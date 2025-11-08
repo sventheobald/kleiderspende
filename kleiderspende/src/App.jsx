@@ -8,12 +8,13 @@ import AboutUs from './pages/AboutUs.jsx'
 import Impressum from './pages/Impressum.jsx'
 import './App.css'
 
-function App() {
-
+const App = () => {
   return (
     <Router>
+      <div className="grid min-h-screen grid-rows-[auto_1fr_auto] bg-gray-50 text-gray-900">
+      
       <Header />
-      <main>
+      <main id="main" className="overflow-x-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register-donation" element={<RegisterDonation />} />
@@ -22,6 +23,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      </div>
     </Router>
   )
 }

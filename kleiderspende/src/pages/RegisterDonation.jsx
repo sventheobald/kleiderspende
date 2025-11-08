@@ -1,5 +1,5 @@
 function RegisterDonation() {
-    return <h1>Über uns</h1>
+    return <h1>Registrierung</h1>
   }
   
   export default RegisterDonation
